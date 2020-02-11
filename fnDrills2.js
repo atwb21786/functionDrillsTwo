@@ -29,3 +29,38 @@ function decode(word) {
 let message = 'craft block argon meter bells brown croon droop';
 let newWord = message.split(' ').map( (word) => { return decode(word); }).join('');
 console.log(newWord);
+
+function daysInYear(month, leapYear) {
+  let days;
+
+  switch(month) {
+  case 'January':
+  case 'March':
+  case 'May':
+  case 'July':
+  case 'August': 
+  case 'October':
+  case 'December':
+    days = 31;
+    break;
+  case 'April':
+  case 'June':
+  case 'September':
+  case 'November':
+    days = 30;
+    break;
+  case 'February':
+    days = 28;
+    break;
+  default:
+    throw Error('Must provide a valid month');
+  }
+
+  if(leapYear === true ) { 
+    return 'February has 29 days.';
+  } 
+  return `${month} has ${days} days.`;
+
+}
+
+console.log(daysInYear('Doggy'));
