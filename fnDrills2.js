@@ -63,4 +63,19 @@ function daysInYear(month, leapYear) {
 
 }
 
-console.log(daysInYear('Doggy'));
+console.log(daysInYear('January'));
+
+function rockPaperScissors(userNum) {
+  if(userNum < 1 || userNum > 3) { throw Error('Must choose 1, 2 or 3!'); }
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  if(userNum === randomNo) { return 'Tie game!' }
+  else if(userNum === 1 && randomNo === 2) { return 'Computer Wins!'; }
+  else if(userNum === 1 && randomNo === 3) { return 'You Win!'; }
+  else if(userNum === 2 && randomNo === 3) { return 'Computer Wins!'; }
+  else if(userNum === 2 && randomNo === 1) { return 'You Win!'; }
+  else if(userNum === 3 && randomNo === 2) { return 'You Win!'; }
+  else if(userNum === 3 && randomNo === 1) { return 'Computer Wins!'; }
+  
+}
+
+console.log(rockPaperScissors(3));
